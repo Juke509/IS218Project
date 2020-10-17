@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question Form</title>
+    </head>
+    <body>
+        <h1>Questions</h1>
+        <form action="questionP.php" method="post">
+            <label>
+                Question Name:
+                <input type="text" name="name">
+            </label>
+            <br>
+            <label>
+                Question Body:
+                <textarea name="questionBdy" rows="5" cols="40">Pls write comment!</textarea>
+            </label>
+            <br>
+            <p>Separate skills by a ','</p>
+            <label>
+                Question Skills:
+                <input type="text" name="skills">
+            </label>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>
