@@ -3,23 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <title>Login Page</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+            div.main{
+                border: 2px solid black;
+                width: 300px;
+                padding: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            div.button{
+                text-align: center;
+                padding: 10px;
+            }
+            label.label{
+                margin: 10px;
+                padding-bottom: 10px;
+                width: 260px;
+            }
+            input.inputBox{
+                float: right;
+                width: 100px;
+                padding-right: 10px;
+            }
+        </style>
     </head>
     <body>
         <h1>LOGIN</h1>
 
         <form action="loginP.php" method="post">
-            <div>
-                <label>
-                    Email:
-                    <input type="text" name="emailAddress">
-                </label>
+            <div class="main">
+                <div>
+                    <label class="label"> Email:</label>
+                    <input type="text" name="emailAddress" class="inputBox">
+                </div>
                 <br>
-                <label>
-                    Password:
-                    <input type="password" name="passWord">
-                </label>
+                <div>
+                    <label class="label">Password:</label>
+                    <input type="password" name="passWord" class="inputBox">
+                </div>
             </div>
-            <div>
+            <div class="button">
                 <input type="submit" name="loginButton" value = "Login">
             </div>
         </form>
