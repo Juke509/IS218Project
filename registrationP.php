@@ -3,7 +3,7 @@ $fName = filter_input(INPUT_POST, 'firstName', FILTER_DEFAULT);
 $lName = filter_input(INPUT_POST, 'lastName', FILTER_DEFAULT);
 $email = filter_input(INPUT_POST,'email', FILTER_DEFAULT);
 $bDay = filter_input(INPUT_POST, 'bDay', FILTER_DEFAULT);
-$pWord = filter_input(INPUT_POST, 'passWord', FILTER_DEFAULT);
+$password = filter_input(INPUT_POST, 'passWord', FILTER_DEFAULT);
 
 
 if(empty($fName)){
