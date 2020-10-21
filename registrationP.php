@@ -17,12 +17,10 @@ if(empty($lName)){
 if(empty($email)){
     echo "Pls input email";
 
-} else{
-    if(strpos($email, '@') !== false){
-        echo "this is an email";
-    }else {
-        echo "This is not a valid email email.";
-    }
+} else if(strpos($email, '@') !== false){
+    echo "this is an email";
+}else {
+    echo "This is not a valid email email.";
 }
 
 if(empty($bDay)){
@@ -32,10 +30,8 @@ if(empty($bDay)){
 if(empty($password)){
     echo "\n Pls input password";
 
+} else if(strlen($password) < 9){
+    echo "Password is not long enough. Must be 8 characters or longer.";
 } else{
-    if(strlen($password) < 9){
-        echo "Password is not long enough. Must be 8 characters or longer.";
-    } else{
-        echo "This is a gud password.";
-    }
+    echo "This is a gud password.";
 }
