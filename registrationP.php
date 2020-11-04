@@ -7,31 +7,37 @@ $password = filter_input(INPUT_POST, 'passWord', FILTER_DEFAULT);
 
 
 if(empty($fName)){
-    echo "Pls fill in First Name";
+    echo "Pls fill in First Name <br>";
+} else{
+    echo "First Name: $fName <br>";
 }
 
 if(empty($lName)){
-    echo "Pls fill in First Name";
+    echo "Pls fill in Last Name <br>";
+} else{
+    echo "Last Name: $lName <br>";
 }
 
 if(empty($email)){
-    echo "Pls input email";
+    echo "Pls input email <br>";
 
 } else if(strpos($email, '@') !== false){
-    echo "this is an email";
+    echo "Email: $email <br>";
 }else {
-    echo "This is not a valid email email.";
+    echo "This is not a valid email email. <br>";
 }
 
 if(empty($bDay)){
-    echo "Pls fill in First Name";
+    echo "Pls fill in First Name <br>";
+} else{
+    echo "Birth Day: $bDay <br>";
 }
 
 if(empty($password)){
-    echo "\n Pls input password";
+    echo "\n Pls input password <br>";
 
 } else if(strlen($password) < 9){
-    echo "Password is not long enough. Must be 8 characters or longer.";
+    echo "Password is not long enough. Must be 8 characters or longer. <br>";
 } else{
-    echo "This is a gud password.";
+    echo "Password: $password";
 }

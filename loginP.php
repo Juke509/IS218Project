@@ -6,9 +6,9 @@
      echo "Pls input email";
 
  } else if(strpos($email, '@') !== false){
-     echo "Email: $email";
+     echo "Email: $email <br>";
  }else {
-     echo "This is not a valid email email.";
+     echo "This is not a valid email email. <br>";
  }
 
  if(empty($password)){
