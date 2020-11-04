@@ -6,7 +6,7 @@
      echo "Pls input email";
 
  } else if(strpos($email, '@') !== false){
-     echo "This is an email";
+     echo "Email: $email";
  }else {
      echo "This is not a valid email email.";
  }
@@ -17,5 +17,5 @@
  } else if(strlen($password) < 9){
      echo "Password is not long enough. Must be 8 characters or longer.";
  } else{
-     echo "This is a gud password.";
+     echo "Password: $password";
  }
