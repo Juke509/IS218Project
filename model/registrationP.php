@@ -1,4 +1,7 @@
 <?php
+require('model/DB/PDO.php');
+require('model/DB/registration_db.php');
+
 $fName = filter_input(INPUT_POST, 'firstName', FILTER_DEFAULT);
 $lName = filter_input(INPUT_POST, 'lastName', FILTER_DEFAULT);
 $email = filter_input(INPUT_POST,'email', FILTER_DEFAULT);
@@ -41,3 +44,5 @@ if(empty($password)){
 } else{
     echo "Password: $password";
 }
+
+add_user($fName, $lName, $email, $bDay, $password);
