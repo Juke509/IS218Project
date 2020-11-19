@@ -16,6 +16,4 @@
         $statement->bindValue(':password', $password);
         $statement->execute();
         $statement->closeCursor();
-
-        print_r($statement);
     }
