@@ -1,6 +1,6 @@
 <?php
-require('model/DB/PDO.php');
-require('model/DB/registration_db.php');
+require('PDO.php');
+require('registration_db.php');
 
 $fName = filter_input(INPUT_POST, 'firstName', FILTER_DEFAULT);
 $lName = filter_input(INPUT_POST, 'lastName', FILTER_DEFAULT);
