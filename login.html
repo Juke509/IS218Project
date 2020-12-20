@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Registration</title>
+        <title>Login Page</title>
         <style>
             h1{
                 text-align: center;
@@ -31,27 +31,13 @@
         </style>
     </head>
     <body>
-        <h1>Registration Form</h1>
-        <form action="../model/registrationP.php" method="post">
+        <h1>LOGIN</h1>
+
+        <form action="loginP.php" method="post">
             <div class="main">
                 <div>
-                    <label class="label">First Name:</label>
-                    <input type="text" name="firstName" class="inputBox">
-                </div>
-                <br>
-                <div>
-                    <label class="label">Last Name:</label>
-                    <input type="text" name="lastName" class="inputBox">
-                </div>
-                <br>
-                <div>
-                    <label class="label">Birth Date:</label>
-                    <input type="text" name="bDay" class="inputBox">
-                </div>
-                <br>
-                <div>
-                    <label class="label">Email:</label>
-                    <input type="text" name="email" class="inputBox">
+                    <label class="label"> Email:</label>
+                    <input type="text" name="emailAddress" class="inputBox">
                 </div>
                 <br>
                 <div>
@@ -60,9 +46,8 @@
                 </div>
             </div>
             <div class="button">
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" name="loginButton" value = "Login">
             </div>
-
         </form>
     </body>
 </html>
