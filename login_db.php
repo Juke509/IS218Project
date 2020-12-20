@@ -13,7 +13,7 @@ function check_user($email, $password){
     $userId = $user['id'];
 
     if(count($user) > 0){
-        return $userId;
+        return $userId['id'];
     } else{
         return false;
     }

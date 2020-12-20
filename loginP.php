@@ -2,10 +2,6 @@
 require('PDO.php');
 require('login_db.php');
 
- $email = filter_input(INPUT_POST, 'emailAddress', FILTER_DEFAULT);
- $password = filter_input(INPUT_POST, 'passWord', FILTER_DEFAULT);
-
-
 $userId = check_user($email, $password);
 
 if($userId !== false) {

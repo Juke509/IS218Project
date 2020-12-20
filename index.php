@@ -1,8 +1,8 @@
 <?php
 
 require('PDO.php');
-require('model/accounts_db.php');
-require('model/questions_db.php');
+require('login_db.php');
+require('questions_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -19,27 +19,27 @@ switch ($action) {
     }
 
     case 'validate_login': {
-        $email = filter_input(INPUT_POST, 'email');
-        $password = filter_input(INPUT_POST, 'password');
+        $email = filter_input(INPUT_POST, 'emailAddress');
+        $password = filter_input(INPUT_POST, 'passWord');
         if($email == NULL || $password == NULL) {
             echo "Not a valid login";
         } else{
-            $userId = validate_login($email, $password);
-            if($userId !== false) {
+            $userId = check_user($email, $password);
+            if($userId == false) {
                 header("Location: .?action=display_registration");
             } else{
-                header("Location: .?action=display_questions&userID=$userId");
+                echo "Valid";
             }
         }
     }
 
     case 'display_registration': {
-        include('registration.php');
+        include('registration.html');
         break;
     }
 
     case 'display_questions': {
-        $userID = filter_input(INPUT_GET, 'userID');
+        $userId = filter_input(INPUT_GET, 'userId');
         if($userID == NULL || $userID < 0) {
             header('Location: .?action=display_login');
         } else{
@@ -50,7 +50,7 @@ switch ($action) {
     }
 
     case 'display_question_form': {
-        $userID = filter_input(INPUT_GET, $userId);
+        $userId = filter_input(INPUT_GET, $userId);
         if($userID == NULL || $userID > 0){
             header('Location: .?action=display_login');
         } else{
