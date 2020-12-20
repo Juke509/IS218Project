@@ -7,12 +7,14 @@ function check_user($email, $password){
     $statement->bindValue(':email', $email);
     $statement->bindValue(':password', $password);
     $statement->execute();
-    $user = $statement->fetch();
+    $user = $statement->fetchAll();
     $statement->closeCursor();
 
+    $userId = $user['id'];
+
     if(count($user) > 0){
-        echo "valid login";
+        return $userId;
     } else{
-        echo 'false';
+        return true;
     }
 }

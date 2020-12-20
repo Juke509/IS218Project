@@ -1,12 +1,23 @@
 <?php
-require('model/DB/PDO.php');
-require('model/DB/login_db.php');
+require('PDO.php');
+require('login_db.php');
 
  $email = filter_input(INPUT_POST, 'emailAddress', FILTER_DEFAULT);
  $password = filter_input(INPUT_POST, 'passWord', FILTER_DEFAULT);
 
 
- if(empty($email)){
+$userId = check_user($email, $password);
+
+if($userId == false) {
+    include('registration.html');
+} else {
+    echo "Valid Login";
+}
+
+
+
+
+ /*if(empty($email)){
      echo "Pls input email";
 
  } else if(strpos($email, '@') !== false){
@@ -23,5 +34,5 @@ require('model/DB/login_db.php');
  } else{
      echo "Password: $password";
  }
+*/
 
-check_user();
