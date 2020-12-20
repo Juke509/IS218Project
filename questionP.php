@@ -1,22 +1,22 @@
 <?php
-$qName = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
-$qBody = filter_input(INPUT_POST, 'questionBdy', FILTER_DEFAULT);
-$qSkills = filter_input(INPUT_POST, 'skills', FILTER_DEFAULT);
+$title = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
+$body = filter_input(INPUT_POST, 'questionBdy', FILTER_DEFAULT);
+$skills = filter_input(INPUT_POST, 'skills', FILTER_DEFAULT);
 
-if(empty($qName)){
+if(empty($title)){
     echo "Pls fill in Name";
-} else  if(strlen($qName) < 4){
+} else  if(strlen($title) < 4){
     echo "Name must be longer than 3 Chars";
 } else {
-    echo "Question Name: $qName <br>";
+    echo "Question Name: $title <br>";
 }
 
-if(empty($qBody)){
+if(empty($body)){
     echo "Pls fill in with a comment";
-} else if(strlen($qBody) > 501){
+} else if(strlen($body) > 501){
     echo "The limit is 500 Characters";
 }else {
-    echo "Question: $qBody <br>";
+    echo "Question: $body <br>";
 }
 
 if(empty($qSkills)){
@@ -32,3 +32,5 @@ if(empty($qSkills)){
         }
     }
 }
+
+add_question($title, $body, $qSkills);

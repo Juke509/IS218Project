@@ -15,6 +15,6 @@ function check_user($email, $password){
     if(count($user) > 0){
         return $userId;
     } else{
-        return true;
+        return false;
     }
 }

@@ -8,10 +8,11 @@ require('login_db.php');
 
 $userId = check_user($email, $password);
 
-if($userId == false) {
+if($userId !== false) {
     include('registration.html');
 } else {
-    echo "Valid Login";
+    $questions = get_users_questions($userId);
+    include('questionDisplay.php');
 }
 
 
